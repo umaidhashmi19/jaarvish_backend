@@ -1,0 +1,1 @@
+# SignupRequest, LoginRequest, TokenResponse placeholders

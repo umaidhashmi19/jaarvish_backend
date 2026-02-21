@@ -1,0 +1,1 @@
+# UploadLinkRequest and UploadFileResponse placeholders

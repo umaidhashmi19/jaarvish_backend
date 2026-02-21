@@ -1,0 +1,1 @@
+# POST /projects/{id}/upload-link and /upload-file endpoints placeholder

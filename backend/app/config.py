@@ -1,0 +1,1 @@
+# Environment config placeholders (SECRET_KEY, DATABASE_URL, etc.)
