@@ -4,7 +4,7 @@ from typing import Optional
 
 from sqlalchemy import Boolean, DateTime, String, Text
 from sqlalchemy.dialects.postgresql import UUID as pgUUID
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
@@ -47,6 +47,9 @@ class User(Base):
         onupdate=lambda: datetime.now(timezone.utc),
         nullable=False,
     )
+
+    # Relationships
+    documents = relationship("Document", back_populates="uploader", lazy="dynamic")
 
     def __repr__(self) -> str:
         return f"<User id={self.id} email={self.email!r}>"
