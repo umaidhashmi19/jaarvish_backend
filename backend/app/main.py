@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.db import init_db
 from app.routes.auth_routes import router as auth_router
+from app.routes.chatbot_routes import router as chatbot_router
+from app.routes.upload_routes import router as upload_router
 
 
 # ---------------------------------------------------------------------------
@@ -48,6 +50,8 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 
 app.include_router(auth_router)
+app.include_router(chatbot_router)
+app.include_router(upload_router)
 
 
 # ---------------------------------------------------------------------------
