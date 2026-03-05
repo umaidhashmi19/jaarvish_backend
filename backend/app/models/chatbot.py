@@ -53,6 +53,7 @@ class Chatbot(Base):
     
     # Relationships
     documents = relationship("Document", back_populates="chatbot", lazy="dynamic")
+    websites = relationship("Website", back_populates="chatbot", lazy="dynamic")
 
     def __repr__(self) -> str:
         return f"<Chatbot(id={self.id}, name={self.name})>"
