@@ -125,13 +125,15 @@ class Document(Base):
         comment="Whether the file is publicly accessible"
     )
     
-    # Processing status (for future features like virus scanning, indexing)
+    # Processing status (for future features like virus scanning, indexing
     processing_status = Column(
         String(50),
-        default="completed",
+        default="pending",        # ← CHANGE THIS
         nullable=False,
         comment="Processing status: pending, processing, completed, failed"
     )
+    
+    error_message = Column(String(500), nullable=True)  # ← ADD THIS
     
     # Timestamps
     uploaded_at = Column(

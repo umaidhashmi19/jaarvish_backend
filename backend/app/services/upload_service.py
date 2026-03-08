@@ -22,6 +22,8 @@ from app.schemas.upload_schema import (
 )
 from app.utils.file_handler import FileHandler
 
+from app.workers.ingestion_worker import trigger_ingestion
+
 # Configure logging
 logger = logging.getLogger(__name__)
 
@@ -239,6 +241,8 @@ class UploadService:
             self.db.add(document)
             self.db.commit()
             self.db.refresh(document)
+
+            trigger_ingestion(document.id)
             
             logger.info(f"File {file_data['original_filename']} uploaded successfully by user {user.id}")
             

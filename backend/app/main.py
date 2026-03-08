@@ -9,6 +9,9 @@ from app.routes.auth_routes import router as auth_router
 from app.routes.chatbot_routes import router as chatbot_router
 from app.routes.upload_routes import router as upload_router
 from app.routes.website_routes import router as website_router
+from app.routes.chat_routes import router as chat_router
+
+
 
 
 # ---------------------------------------------------------------------------
@@ -54,6 +57,7 @@ app.include_router(auth_router)
 app.include_router(chatbot_router)
 app.include_router(upload_router)
 app.include_router(website_router)
+app.include_router(chat_router)
 
 
 # ---------------------------------------------------------------------------

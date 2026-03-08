@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = ""
 # postgresql+psycopg2://postgres.xotqfjonlzwnysjwreag:[Infraliti-AI]@aws-1-ap-south-1.pooler.supabase.com:6543/postgres?sslmode=require
     # JWT settings
+    GROQ_API_KEY: str
     SECRET_KEY: str = "b484160e52f2276aa73f2b426af32470afce7d4f8b85a40a5603541d4263ff43"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
